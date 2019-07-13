@@ -2,9 +2,9 @@
 # **Introduction**
 ##
 
-![alt text][ALL vs Hem]
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+![alt text][ALLvsHem]
+[ALLvsHem]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "ALL vs. Hem"
 
 
-![alt text][Random Forest Feature Importance]
-[logo]:https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/RF%20Feature%20Importance.PNG
+![alt text][RF_feature_importance]
+[RF_feature_importance]:https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/RF%20Feature%20Importance.PNG "Random Forest Feature Importance"
