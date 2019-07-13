@@ -1,17 +1,7 @@
-github: [metadata]
-encoding: UTF-8
-kramdown:
-  input: GFM
-  hard_wrap: false
-future: true
-jailed: false
 theme: jekyll-theme-primer
-gfm_quirks: paragraph_end
+
 
 ---
-title: Classification of Acute Lymphoblastic Leukemia (ALL) in Blood Cell Images Using Machine Learning
-names: Ji Ye Chun, Phillip Galonsky, Haoran Zhang
 ---
-<h1> {{ title }} </h1>
-<h2> {{ names }} </h2>
+
 
