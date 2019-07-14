@@ -1,7 +1,7 @@
-<title align="center'> 
+ 
 #**Classification of Acute Lymphoblastic Leukemia (ALL) in Blood Cell Images Using Machine Learning**
 ## Ji Ye (JC) Chun, Phillip Galonsky, Haoran (Ansel) Zhang
-</title>
+
           
 # **Introduction**
 Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow produces too many immature lymphocytes. ALL is most common in young children and progresses rapidly, so quick diagnosis is critical for ALL patients to receive timely treatment. Among various diagnosis methods for ALL, the microscopic analysis of blood cells is the most economical and has the advantage of being relatively non-invasive. However, microscopic analysis is time consuming and requires the supervision of a medical expert. Moreover, the results of such analysis are limited by their subjective nature and reliance on the expert’s skill. Over the last decade, various machine learning methods have been implemented for the diagnosis of ALL to overcome these shortcomings. 
@@ -24,7 +24,7 @@ Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow pro
 
  9 Morphological, 21 texture, and 8 color features are extracted.
 <br>
-<p align="center">
+<center>
  |Morphologial                 |Texture                                       |Color                 |  
  |:---------------------------:|:--------------------------------------------:|:--------------------:|
  |Cell Size                    |Haralick Angular Second Moment                |Red Mean              |
@@ -48,7 +48,7 @@ Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow pro
  |                             |Haar Wavelet Horizontal Variance              |                      |
  |                             |Haar Wavelet Vertical Variance                |                      |
  |                             |Wavelet Diagonal Variance                     |                      |
-</p>
+</center>
 
 
 # Dimension Reduction
@@ -57,13 +57,9 @@ Top 10 features from random forest.
 
 <p align="center">
   Scatter Plot of ALL vs. Normal with Top 3 Features
-<img align="center' src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsNormalScatter3D.gif">
-
 </p>
+<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsNormalScatter3D.gif">
 
 
 
-<div>
-    <a href="https://plot.ly/~JC-Chun/0/?share_key=oo5Hb1aiKLzIPaGLk1tb2d" target="_blank" title="3d-scatter-colorscale" style="display: block; text-align: center;"><img src="https://plot.ly/~JC-Chun/0.png?share_key=oo5Hb1aiKLzIPaGLk1tb2d" alt="3d-scatter-colorscale" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="JC-Chun:0" sharekey-plotly="oo5Hb1aiKLzIPaGLk1tb2d" src="https://plot.ly/embed.js" async></script>
-</div>
+
