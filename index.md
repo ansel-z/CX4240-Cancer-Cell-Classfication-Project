@@ -1,5 +1,5 @@
  
-#**Classification of Acute Lymphoblastic Leukemia (ALL) in Blood Cell Images Using Machine Learning**
+# **Classification of Acute Lymphoblastic Leukemia (ALL) in Blood Cell Images Using Machine Learning**
 ## Ji Ye (JC) Chun, Phillip Galonsky, Haoran (Ansel) Zhang
 
           
@@ -16,38 +16,39 @@ Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow pro
   [CodaLab](https://competitions.codalab.org/competitions/20429)
 
 ## Images of ALL and normal cells
-<img align="center' src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsHem_color.PNG">
+<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsHem_color.PNG">
 
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsHem.PNG">
 
 # Feature Extractions
 
  9 Morphological, 21 texture, and 8 color features are extracted.
-<br>
 <center>
- |Morphologial                 |Texture                                       |Color                 |  
- |:---------------------------:|:--------------------------------------------:|:--------------------:|
- |Cell Size                    |Haralick Angular Second Moment                |Red Mean              |
- |Perimeter                    |Haralick Contrast                             |Green Mean            |
- |Form Factor                  |Haralick Correlation                          |Blue Mean             |
- |Roundness                    |Haralick Variance                             |Hue Mean              |
- |Length/Diameter Ratio        |Haralick Inverse Difference Moment            |Saturation Mean       |
- |Compactness                  |Haralick Sum Average                          |Value Mean            |
- |Boundary Roughness Variance  |Haralick Sum Variance                         |Intensity Mean        |
- |Boundary Roughness Skewness  |Haralick Sum Entropy                          |Intensity Variance    |
- |Boundary Roughness Kurtosis  |Haralick Entropy                              |                      |
- |                             |Haralick Difference Variance                  |                      |
- |                             |Haralick Difference Entropy                   |                      |
- |                             |Haralick Information Measures of Correlation 1|                      |
- |                             |Haralick Information Measures of Correlation 2|                      |
- |                             |Haar Wavelet Approximation Mean               |                      |
- |                             |Haar Wavelet Horizontal Mean                  |                      |
- |                             |Haar Wavelet Vertical Mean                    |                      |
- |                             |Haar Wavelet Diagonal Mean                    |                      |
- |                             |Haar Wavelet Approximation Variance           |                      |
- |                             |Haar Wavelet Horizontal Variance              |                      |
- |                             |Haar Wavelet Vertical Variance                |                      |
- |                             |Wavelet Diagonal Variance                     |                      |
+ 
+|Morphologial                 |Texture                                       |Color                       |  
+|:---------------------------:|:--------------------------------------------:|:--------------------------:|
+|Cell Size                    |Haralick Angular Second Moment                |Red Mean                    |
+|Perimeter                    |Haralick Contrast                             |Green Mean                  |
+|Form Factor                  |Haralick Correlation                          |Blue Mean                   |
+|Roundness                    |Haralick Variance                             |Hue Mean                    |
+|Length/Diameter Ratio        |Haralick Inverse Difference Moment            |Saturation Mean             |
+|Compactness                  |Haralick Sum Average                          |Value Mean                  |
+|Boundary Roughness Variance  |Haralick Sum Variance                         |Intensity Mean              |
+|Boundary Roughness Skewness  |Haralick Sum Entropy                          |Intensity Variance          |
+|Boundary Roughness Kurtosis  |Haralick Entropy                              |                            |
+|                             |Haralick Difference Variance                  |                            |
+|                             |Haralick Difference Entropy                   |                            |
+|                             |Haralick Information Measures of Correlation 1|                            |
+|                             |Haralick Information Measures of Correlation 2|                            |
+|                             |Haar Wavelet Approximation Mean               |                            |
+|                             |Haar Wavelet Horizontal Mean                  |                            |
+|                             |Haar Wavelet Vertical Mean                    |                            |
+|                             |Haar Wavelet Diagonal Mean                    |                            |
+|                             |Haar Wavelet Approximation Variance           |                            |
+|                             |Haar Wavelet Horizontal Variance              |                            |
+|                             |Haar Wavelet Vertical Variance                |                            |
+|                             |Wavelet Diagonal Variance                     |                            |
+ 
 </center>
 
 
