@@ -66,14 +66,14 @@ We applied two differenet dimension reduction methods: Random Forest (RF) and Pr
 |:-----:|:--------:|
 |1|Cell Size|
 |2|Perimeter|
-|3|Intensity Variance|
-|4|Red Mean|
-|5|Value Mean|
-|6|Hue Mean|
-|7|Saturation Mean|
-|8|Blue Mean|
-|9|Green Mean|
-|10|Form Factor|
+|3|Haralick Difference Entropy|
+|4|Haralick Contrast|
+|5|Red Mean|
+|6|Value Mean|
+|7|Haralick Information Measures of Correlation 1|
+|8|Haralick Information Measures of Correlation 2|
+|9|Hue Mean|
+|10|Saturation Mean|
 
 <p align="center">
 </p>
@@ -106,18 +106,18 @@ Principal Component Analysis
 
 # Classifications
 <p align="center">
- <b>Support Vector Machine (SVM)</b>
+ <b></b>
  
 </p>
 <br>
 
 <p align="center">
- <b>Random Forest</b> 
+ <b>ROC curve</b> 
 </p>
 <br>
 
 <p align="center">
- <b>K Nearest Neighbors</b>
+ <b>Accuracy comparison</b>
  
 </p>
 <br>
@@ -127,4 +127,9 @@ Principal Component Analysis
  
 </p>
 <br>
+
+# Conclusion
+
+
+# References
  
