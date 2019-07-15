@@ -106,7 +106,7 @@ Principal Component Analysis
 
 # Classifications
 <p align="center">
- <b>Support Vector Machine (SVM)</b>
+ <b></b>
  
 </p>
 <br>
