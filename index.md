@@ -52,7 +52,8 @@ The RGB cell images are converted to grayscale and binary for feature extraction
 |                                |Wavelet Diagonal Variance                        |                               |
  
 </center>
-
+<br>
+<br>
 
 # Dimension Reduction
 We applied two differenet dimension reduction methods: Random Forest (RF) and Principal Component Analysis (PCA)
@@ -79,22 +80,49 @@ We applied two differenet dimension reduction methods: Random Forest (RF) and Pr
 <br>
 <br>
 <p align="center">
- **Pairplot of Top 4 Features**
-</p>
+  <b>Pairplot of Top 4 Features</b>
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/RF%20top%204.PNG">
+</p>
 
 <p align="center">
-  **3D Scatter Plot of ALL vs. Normal with Top 3 Features**
+ <b>3D Scatter Plot of ALL vs. Normal with Top 3 Features</b>
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsNormal_Scatter3DRF.gif">
 </p>
+<br>
+<br>
 
-<br>
-<br>
 Principal Component Analysis
 
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/Scree_plot.PNG">
-
+<br>
 <p align="center">
-  **3D Scatter Plot of ALL vs. Normal with Top 3 Principal Components**
+ <b>3D Scatter Plot of ALL vs. Normal with Top 3 Principal Components</b>
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsNormal_Scatter3D_3PC.gif">
 </p>
+<br>
+<br>
+
+# Classifications
+<p align="center">
+ <b>Support Vector Machine (SVM)</b>
+ 
+</p>
+<br>
+
+<p align="center">
+ <b>Random Forest</b> 
+</p>
+<br>
+
+<p align="center">
+ <b>K Nearest Neighbors</b>
+ 
+</p>
+<br>
+
+<p align="center">
+ <b>Ensemble</b>
+ 
+</p>
+<br>
+ 
