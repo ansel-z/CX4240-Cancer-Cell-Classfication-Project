@@ -57,7 +57,7 @@ The RGB cell images are converted to grayscale and binary for feature extraction
 # Dimension Reduction
 We applied two differenet dimension reduction methods: Random Forest (RF) and Principal Component Analysis (PCA)
 
-Top 10 features from random forest
+**Top 10 features from random forest**
 
 |Ranking|Feature   |
 |:-----:|:--------:|
@@ -79,12 +79,12 @@ Top 10 features from random forest
 <br>
 <br>
 <p align="center">
- Pairplot of Top 4 Features 
+ **Pairplot of Top 4 Features**
 </p>
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/RF%20top%204.PNG">
 
 <p align="center">
-  3D Scatter Plot of ALL vs. Normal with Top 3 Features
+  **3D Scatter Plot of ALL vs. Normal with Top 3 Features**
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsNormal_Scatter3DRF.gif">
 </p>
 
@@ -95,6 +95,6 @@ Principal Component Analysis
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/Scree_plot.PNG">
 
 <p align="center">
-  3D Scatter Plot of ALL vs. Normal with Top 3 Principal Components
+  **3D Scatter Plot of ALL vs. Normal with Top 3 Principal Components**
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsNormal_Scatter3D_3PC.gif">
 </p>
