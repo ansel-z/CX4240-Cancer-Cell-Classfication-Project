@@ -58,9 +58,9 @@ Top 10 features from random forest.
 
 <p align="center">
   Scatter Plot of ALL vs. Normal with Top 3 Features
-</p>
+
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsNormalScatter3D.gif">
 
-
+</p>
 
 
