@@ -105,6 +105,25 @@ Principal Component Analysis
 <br>
 
 # Classifications
+We applied 5 different classification models to the problem: Support Vector Machine (SVM), Random Forest (RF), K-Nearest Neighbor (KNN), Majority Voting (MV) and Stacking. The last two methods are enseble methods where we combined our SVM, RF and KNN models in hopes of further improving classification results.
+
+## Support Vector Machine
+For our SVM kernel, we used a the radial basis function (RBF) because it performed better than a linear kernel. To optomomize the hyperparamaters C and gamma we employed grid search cross validation.
+
+## Random Forest
+For our Random Forest classifier, we applied grid search cross validation to optomize many hyperparameters: number of estimators, bootstrapping (yes or no), maximum depth of estimators, the maximum number of features considered for each split, minimum samples required to split a node, minimum samples required to have on a leaf node. However, this model performed perfectly on our training data, indicating that it may have been over-fitted. Thus, we created a second random forest classifier with more conservative hyperparameter inputs, e.g. smaller number of estimators 
+
+## K-Nearest Neighbor
+For our KNN classifier, we used cross validation to optomize the hyperparameter K. The best performing value was 9.
+
+## Ensemble Methods
+We used two ensemble methods comprised of the SVM, RF and KNN methods that we had already tuned. First, we did a simple Majority vote classifier to see if this improved results. Second, we employed a Stacking method, wherein the SVM, RF and KNN classifiers served as base estimators, and we employed a Logistic Regression (LR) classifier as the meta classifier. 
+
+<p align="center">
+  <b>Pairplot of Top 4 Features</b>
+<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/Stacking">
+</p>
+
 <p align="center">
  <b></b>
  
