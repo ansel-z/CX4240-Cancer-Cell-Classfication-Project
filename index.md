@@ -152,6 +152,7 @@ We used two ensemble methods comprised of the SVM, RF and KNN methods that we ha
 # Conclusion
 
 <br>
+
 # References
  
 [1]	R. M. Haralick, K. Shanmugam, and I. Dinstein, "Textural Features for Image Classification," IEEE Transactions on Systems, Man, and Cybernetics, vol. SMC-3, pp. 610-621, Nov. 1973.
