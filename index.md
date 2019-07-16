@@ -22,11 +22,12 @@ Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow pro
 <br>
 
 # Feature Extractions
-The RGB cell images are converted to grayscale and binary for feature extractions.
+The RGB cell images are converted to grayscale and binary for feature extractions. The color images are used to extract color features, the grayscale images are used for texture features and the binary images are used for morphological features.
+
 <br>
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsHem.PNG">
 
- 9 Morphological, 21 texture, and 8 color features are extracted.
+In total, 9 Morphological, 21 texture, and 8 color features are extracted. After extraction, the features are scaled to lie in the interval [0,1] using min max scaling.
 <center>
  
 |Morphologial                         |Texture                                             |Color                                    |  
@@ -58,7 +59,7 @@ The RGB cell images are converted to grayscale and binary for feature extraction
 <br>
 
 # Dimension Reduction
-We applied two differenet dimension reduction methods: Random Forest (RF) and Principal Component Analysis (PCA)
+We applied two differenet dimension reduction methods: Random Forest (RF) and Principal Component Analysis (PCA).
 
 **Top 10 features from random forest**
 
@@ -86,12 +87,16 @@ We applied two differenet dimension reduction methods: Random Forest (RF) and Pr
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/Pairplot.PNG">
 </p>
 
+As you can see, there is some slight separation of ALL and normal cells over the first few features, but there is not very much. To try to improve separability, we applied PCA to the data.
+
 <p align="center">
  <b>3D Scatter Plot of ALL vs. Normal with Top 3 Features</b>
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsNormal_SCatter3D_RF.gif">
 </p>
 <br>
 <br>
+
+By the elbow test, we elected to reduce our data to six principal components. 
 
 <p align="center">
 <b>Principal Component Analysis</b>
@@ -112,46 +117,46 @@ We applied 5 different classification models to the problem: Support Vector Mach
 ## Support Vector Machine
 For our SVM kernel, we used a the radial basis function (RBF) because it performed better than a linear kernel. To optomomize the hyperparamaters C and gamma we employed grid search cross validation.
 
+<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/SVM.PNG">
+
 ## Random Forest
-For our Random Forest classifier, we applied grid search cross validation to optomize many hyperparameters: number of estimators, bootstrapping (yes or no), maximum depth of estimators, the maximum number of features considered for each split, minimum samples required to split a node, minimum samples required to have on a leaf node. However, this model performed perfectly on our training data, indicating that it may have been over-fitted. Thus, we created a second random forest classifier with more conservative hyperparameter inputs, e.g. smaller number of estimators 
+To optomize the hyperparameters of our Random Forest classifier, we again applied grid search cross validation, but this time with many more hyperparameters: number of estimators, bootstrapping (yes or no), maximum depth of estimators, the maximum number of features considered for each split, minimum samples required to split a node, minimum samples required to have on a leaf node. However, this model performed perfectly on our training data, indicating that it may have been over-fitted. Thus, we created a second random forest classifier with more conservative hyperparameter inputs, e.g. smaller number of estimators. We call this second classigier RF2.  
 
 ## K-Nearest Neighbor
-For our KNN classifier, we used cross validation to optomize the hyperparameter K. The best performing value was 9.
+For our KNN classifier, we used cross validation to optomize the hyperparameter K. The best performing value on our principal component data was 25.
+
+<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/KNN.PNG">
 
 ## Ensemble Methods
 We used two ensemble methods comprised of the SVM, RF and KNN methods that we had already tuned. First, we did a simple Majority vote classifier to see if this improved results. Second, we employed a Stacking method, wherein the SVM, RF and KNN classifiers served as base estimators, and we employed a Logistic Regression (LR) classifier as the meta classifier. 
 
-<p align="center">
-  <b>Pairplot of Top 4 Features</b>
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/Stacking.png">
 </p>
 
-<p align="center">
- <b></b>
- 
-</p>
-<br>
 
-<p align="center">
- <b>ROC curve</b> 
-</p>
-<br>
+# Comparrison of Methods
 
-<p align="center">
- <b>Accuracy comparison</b>
- 
-</p>
-<br>
+|       | TP   | TN  | FP  | FN |
+|-------|------|-----|-----|----|
+| SVM   | 1140 | 234 | 414 | 79 |
+| RF    | 1132 | 231 | 417 | 87 |
+| RF2   | 1136 | 231 | 417 | 83 |
+| KNN   | 1141 | 167 | 481 | 78 |
+| MV    | 1142 | 215 | 433 | 77 |
+| Stack | 1131 | 232 | 416 | 88 |
 
-<p align="center">
- <b>Ensemble</b>
- 
+
+<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ROC_PCA6.PNG">
 </p>
-<br>
+
+ 
+<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ComparisonPCA6.PNG">
+</p>
+
 
 # Conclusion
 
-<br>
+This classification task was quite difficult, as the cancer cells and normal cells often appear quite similair, both as images and as extracted numerical features. All of our models, including ensemble, performed similairly, with accuracies arround 73%. KNN performed the worst with 70.1% accuracy and SVM performed the best with 73.6%. While these results are not as good as we hoped, they are a good start for this classification problem. Moreover, while the accuracy of our models relatively low, the percision is relatively high. This means that our models 
 
 # References
  
