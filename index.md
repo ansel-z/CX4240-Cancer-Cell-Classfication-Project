@@ -120,8 +120,7 @@ For our KNN classifier, we used cross validation to optomize the hyperparameter 
 We used two ensemble methods comprised of the SVM, RF and KNN methods that we had already tuned. First, we did a simple Majority vote classifier to see if this improved results. Second, we employed a Stacking method, wherein the SVM, RF and KNN classifiers served as base estimators, and we employed a Logistic Regression (LR) classifier as the meta classifier. 
 
 <p align="center">
-  <b>Pairplot of Top 4 Features</b>
-<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/Stacking">
+<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/Stacking.png">
 </p>
 
 <p align="center">
