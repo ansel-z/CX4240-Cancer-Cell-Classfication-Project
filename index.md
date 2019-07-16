@@ -1,13 +1,13 @@
  
 # **Classification of Acute Lymphoblastic Leukemia (ALL) in Blood Cell Images Using Machine Learning**
-## Ji Ye (JC) Chun, Phillip Galonsky, Haoran (Ansel) Zhang
+## Ji Ye (JC) Chun, Phillip Galonsky, Haoran Zhang
 
           
-# **Introduction**
+# Introduction
 Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow produces too many immature lymphocytes. ALL is most common in young children and progresses rapidly, so quick diagnosis is critical for ALL patients to receive timely treatment. Among various diagnosis methods for ALL, the microscopic analysis of blood cells is the most economical and has the advantage of being relatively non-invasive. However, microscopic analysis is time consuming and requires the supervision of a medical expert. Moreover, the results of such analysis are limited by their subjective nature and reliance on the expert’s skill. Over the last decade, various machine learning methods have been implemented for the diagnosis of ALL to overcome these shortcomings. 
 
 
-# **Dataset**
+# Dataset
 
   A dataset of cells with labels (normal versus cancer) is obtained from [University of Arkansas for Medical Sciences website]( https://app.box.com/s/xeclwwd2xep9ntljtgyptmt4k5wone9n). The dataset contains 15,114 microscopic images of cells from a total of 118 individual subjects, of which 69 have ALL and 49 are healthy. The images have been processed so that they contain only cells on a black background. The dataset is divided into a training set and a preliminary testing set for which the ground truth for each image has been marked by an expert oncologist.
   
@@ -21,17 +21,27 @@ Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow pro
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsHem_color.PNG">
 <br>
 
-# Feature Extraction
-The RGB cell images are converted to grayscale and binary for feature extraction. The color images are used to extract color features, the grayscale images are used for texture features and the binary images are used for morphological features.
+# Feature Extractions
+Visually, experience hematologists distinguish ALL from normal cells by comparing the differences in morphological, chromatin pattern, and color characteristics. Morphologically, ALL nucleus is characterized by large, irregular size and shape. Its boundary is rough, and its chromatin patter is also irregular. ALL nucleus has the sparse red-purple color whereas normal hemoglobin nucleus has the color of blue-purple.
 
 <br>
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsHem.PNG">
+<br>
+
+In this project, quantitative morphological, texture, and color features are extracted from both ALL and normal cells (Table 1) in RGB, grayscale, and binary images. The size of nucleus is computed by counting the total number of pixels inf the nucleus in the binary images. The perimeter of the nucleus is calculated by counting the number of pixels representing the nucleus boundary. Form factor, roundness, length/diameter ratio, and compactness represent the shape of nucleus. Nucleus boundary roughness is measured by finding the variance, skewness, and kurtosis of all the distance between centroid and nucleus boundary points.
+
+
+The chromatin distribution reflects the organization of RNA and DNA in nucleus, and it is an essential feature for recognizing ALL. The chromatin distribution is extracted as texture features using Haralick’s textural feature extraction method [1] and Haar wavelet. Haralick’s method uses the gray-level cooccurrence matrix (GLCM) to find statistical data which summarize the relative frequency distribution in s grayscale image. Haar wavelet texture features are obtained by applying a high pass and a low pass filter to the grayscale images and taking means and variance in the horizontal, vertical, and diagonal directions.
+
+
+Color is another important descriptor of ALL nucleus. The means of red, green, and blue color are computed from the RGB images, and the means of hue, saturation, and value are also extracted from the HSV images. In addition to the colors, the intensity mean and variance are computed from the grayscale images.
+
 
 In total, 9 Morphological, 21 texture, and 8 color features are extracted. After obtaining the numerical data, the features are scaled to lie in the interval [0,1] using min-max scaling.
 <center>
  
-|Morphologial                         |Texture                                             |Color                                    |  
-|:-----------------------------------:|:--------------------------------------------------:|:---------------------------------------:|
+|**Morphologial**                |**Texture**                                      |**Color**                      |  
+|:------------------------------:|:-----------------------------------------------:|:-----------------------------:|
 |Cell Size                       |Haralick Angular Second Moment                   |Red Mean                       |
 |Perimeter                       |Haralick Contrast                                |Green Mean                     |
 |Form Factor                     |Haralick Correlation                             |Blue Mean                      |
@@ -53,15 +63,14 @@ In total, 9 Morphological, 21 texture, and 8 color features are extracted. After
 |                                |Haar Wavelet Horizontal Variance                 |                               |
 |                                |Haar Wavelet Vertical Variance                   |                               |
 |                                |Wavelet Diagonal Variance                        |                               |
- 
-</center>
-<br>
-<br>
+
+Table 1. **Features**
+
 
 # Dimension Reduction
 We applied two differenet dimension reduction methods: Random Forest (RF) and Principal Component Analysis (PCA).
 
-**Top 10 features from random forest**
+
 
 |Ranking|Feature   |
 |:-----:|:--------:|
@@ -76,8 +85,9 @@ We applied two differenet dimension reduction methods: Random Forest (RF) and Pr
 |9|Hue Mean|
 |10|Saturation Mean|
 
-<p align="center">
-</p>
+Table 2. **Top 10 features from random forest**
+
+
  <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/RF%20Feature%20Importance.PNG">
 
 <br>
@@ -131,9 +141,9 @@ For our KNN classifier, we used cross validation to optomize the hyperparameter 
 We used two ensemble methods comprised of the SVM, RF and KNN methods that we had already tuned. First, we did a simple Majority vote classifier to see if this improved results. Second, we employed a Stacking method, wherein the SVM, RF and KNN classifiers served as base estimators, and we employed a Logistic Regression (LR) classifier as the meta classifier. 
 
 <img align="center" src="Figures/Stacking.png">
-</p>
 
-# Results and Comparrison of Methods
+
+# Results and Comparison of Methods
 The results of our models when trained on 6 principal components are given below.
 <img align="center" src="Figures/ComparisonPCA6.PNG">
 
