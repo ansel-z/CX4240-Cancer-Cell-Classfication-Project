@@ -4,7 +4,7 @@
 
           
 # Introduction
-Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow produces too many immature lymphocytes. ALL is most common in young children and progresses rapidly, so quick diagnosis is critical for ALL patients to receive timely treatment. Among various diagnosis methods for ALL, the microscopic analysis of blood cells is the most economical and has the advantage of being relatively non-invasive. However, microscopic analysis is time consuming and requires the supervision of a medical expert. Moreover, the results of such analysis are limited by their subjective nature and reliance on the expert’s skill. Over the last decade, various machine learning methods have been implemented for the diagnosis of ALL to overcome these shortcomings. 
+Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow produces too many immature lymphocytes. ALL is the most common cancer found in children, accounting for 30% of all pediatric cancer. While ALL has one of the highest cure rates in all of childhood cancers (88.5%), it progresses rapidly, so quick diagnosis is critical for timely treatment. Among various diagnosis methods for ALL, the microscopic analysis of blood cells is the most economical and has the advantage of being relatively non-invasive. However, microscopic analysis is time consuming and requires the supervision of a medical expert. Moreover, the results of such analysis are limited by their subjective nature and reliance on the expert’s skill. Over the last decade, various machine learning methods have been implemented for the diagnosis of ALL to overcome these shortcomings. 
 
 
 # Dataset
@@ -97,14 +97,14 @@ Table 2. **Top 10 features from random forest**
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/Pairplot.PNG">
 </p>
 
-As you can see, there is some slight separation of ALL and normal cells over the first few features, but there is not very much. To try to improve separability, we applied PCA to the data.
-
 <p align="center">
  <b>3D Scatter Plot of ALL vs. Normal with Top 3 Features</b>
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsNormal_SCatter3D_RF.gif">
 </p>
 <br>
 <br>
+
+As you can see, there is some slight separation of ALL and normal cells over the first few features, but there is not very much. To try to improve separability, we applied PCA to the data.
 
 <p align="center">
 <b>Principal Component Analysis</b>
@@ -138,13 +138,12 @@ For our KNN classifier, we used cross validation to optomize the hyperparameter 
 <img align="center" src="Figures/KNN_PCA6.PNG">
 
 ### Ensemble Methods
-We used two ensemble methods comprised of the SVM, RF and KNN methods that we had already tuned. First, we did a simple Majority vote classifier to see if this improved results. Second, we employed a Stacking method, wherein the SVM, RF and KNN classifiers served as base estimators, and we employed a Logistic Regression (LR) classifier as the meta classifier. 
+We used two ensemble methods comprised of the SVM, RF and KNN methods that we had already tuned. First, we did a simple majority vote classifier to see if this improved results. Second, we employed a stacking method, wherein the SVM, RF and KNN classifiers served as base estimators, and we employed a Logistic Regression (LR) classifier as the meta classifier. 
 
 <img align="center" src="Figures/Stacking.png">
 
 
 # Results and Comparison of Methods
-The results of our models when trained on 6 principal components are given below.
 <img align="center" src="Figures/ComparisonPCA6.PNG">
 
 <img align="center" src="Figures/ROC_PCA6.PNG">
@@ -183,6 +182,8 @@ This classification task was quite difficult, as the cancer cells and normal cel
 [4]	L. Putzu, G. Caocci, and C. Di Ruberto, "Leucocyte classification for leukaemia detection using image processing techniques," Artif. Intell. Med., vol. 62, pp. 179-191, Nov. 2014.
 <br>
 [5]	I. Vincent, K. Kwon, S. Lee, and K. Moon, "Acute lymphoid leukemia classification using two-step neural network classifier," in 21st Korea-Japan Joint Workshop on Frontiers of Computer Vision (FCV), 2015, pp. 1-4.
+<br>
+[6] Howlader N, Noone AM, Krapcho M, Miller D, Brest A, Yu M, Ruhl J, Tatalovich Z, Mariotto A, Lewis DR, Chen HS, Feuer EJ, Cronin KA (eds). SEER Cancer Statistics Review, 1975-2016, National Cancer Institute. Bethesda, MD, https://seer.cancer.gov/csr/1975_2016/, based on November 2018 SEER data submission, posted to the SEER web site, April 2019.
 <br>
 [6]	L. H. S. Vogado, R. M. S. Veras, F. H. D. Araujo, R. R. V. Silva, and K. R. T. Aires, "Leukemia diagnosis in blood slides using transfer learning in CNNs and SVM for classification," Eng. Appl. Artif. Intell., vol. 72, pp. 415-422, Jun. 2018.
 <br>
