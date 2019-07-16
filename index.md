@@ -39,28 +39,24 @@ Color is another important descriptor of ALL nucleus. ALL nucleus has the sparse
 
 In total, 9 Morphological, 21 texture, and 8 color features are extracted. After obtaining the numerical data, the features are scaled to lie in the interval [0,1] using min-max scaling.
 
-<br>
-<img align="center" src="Figures/feature_chart.png">
-<br>
-
 <p align="center">
 <b> Table 1. Features </b>
 </p>
 
+<br>
+<img align="center" src="Figures/feature_chart.png">
+<br>
 
 # Dimension Reduction
 We applied two differenet dimension reduction methods: Random Forest (RF) and Principal Component Analysis (PCA).
-
-
-
-<br>
-<img align="center" src="Figures/top_feature_chart.png">
-<br>
 
 <p align="center">
 <b> Table 2. Top 10 features from random forest </b>
 </p>
 
+<br>
+<img align="center" src="Figures/top_feature_chart.png">
+<br>
 
  <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/RF%20Feature%20Importance.PNG">
 
