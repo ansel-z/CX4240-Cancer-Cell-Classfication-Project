@@ -22,19 +22,19 @@ Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow pro
 <br>
 
 # Feature Extractions
-Visually, experience hematologists distinguish ALL from normal cells by comparing the differences in morphological, chromatin pattern, and color characteristics. Morphologically, ALL nucleus is characterized by large, irregular size and shape. Its boundary is rough, and its chromatin patter is also irregular. ALL nucleus has the sparse red-purple color whereas normal hemoglobin nucleus has the color of blue-purple.
+Visually, experience hematologists distinguish ALL from normal cells by comparing the morphological, chromatin pattern, and color characteristics or cells. In this project, quantitative morphological, texture, and color features are extracted from both ALL and normal cells in RGB, grayscale, and binary images (Table 1). 
 
 <br>
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsHem.PNG">
 <br>
 
-In this project, quantitative morphological, texture, and color features are extracted from both ALL and normal cells (Table 1) in RGB, grayscale, and binary images. The size of nucleus is computed by counting the total number of pixels inf the nucleus in the binary images. The perimeter of the nucleus is calculated by counting the number of pixels representing the nucleus boundary. Form factor, roundness, length/diameter ratio, and compactness represent the shape of nucleus. Nucleus boundary roughness is measured by finding the variance, skewness, and kurtosis of all the distance between centroid and nucleus boundary points.
+Morphologically, ALL nucleus is characterized by large, irregular size and shape and its rough boundary. The size of nucleus is computed by counting the total number of pixels inf the nucleus in the binary images. The perimeter of the nucleus is calculated by counting the number of pixels representing the nucleus boundary. Form factor, roundness, length/diameter ratio, and compactness represent the shape of nucleus. Nucleus boundary roughness is measured by finding the variance, skewness, and kurtosis of all the distance between centroid and nucleus boundary points.
 
 
-The chromatin distribution reflects the organization of RNA and DNA in nucleus, and it is an essential feature for recognizing ALL. The chromatin distribution is extracted as texture features using Haralick’s textural feature extraction method [1] and Haar wavelet. Haralick’s method uses the gray-level cooccurrence matrix (GLCM) to find statistical data which summarize the relative frequency distribution in s grayscale image. Haar wavelet texture features are obtained by applying a high pass and a low pass filter to the grayscale images and taking means and variance in the horizontal, vertical, and diagonal directions.
+The chromatin distribution reflects the organization of RNA and DNA in nucleus, and it is an essential feature for recognizing ALL. The chromatin distribution is extracted as texture features using Haralick’s textural feature extraction method [1] and Haar wavelet. Haralick’s method uses the gray-level co-occurrence matrix (GLCM) to find statistical data which summarize the relative frequency distribution in s grayscale image. Haar wavelet texture features are obtained by applying a high pass and a low pass filter to the grayscale images and taking means and variance in the horizontal, vertical, and diagonal directions.
 
 
-Color is another important descriptor of ALL nucleus. The means of red, green, and blue color are computed from the RGB images, and the means of hue, saturation, and value are also extracted from the HSV images. In addition to the colors, the intensity mean and variance are computed from the grayscale images.
+Color is another important descriptor of ALL nucleus. ALL nucleus has the sparse red-purple color whereas normal hemoglobin nucleus has the color of blue-purple. The means of red, green, and blue color are computed from the RGB images, and the means of hue, saturation, and value are also extracted from the HSV images. In addition to the colors, the intensity mean and variance are computed from the grayscale images.
 
 
 In total, 9 Morphological, 21 texture, and 8 color features are extracted. After obtaining the numerical data, the features are scaled to lie in the interval [0,1] using min-max scaling.
