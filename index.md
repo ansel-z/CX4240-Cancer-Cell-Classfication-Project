@@ -96,13 +96,13 @@ As you can see, there is some slight separation of ALL and normal cells over the
 <br>
 <br>
 
-By the elbow test, we elected to reduce our data to six principal components. 
-
 <p align="center">
 <b>Principal Component Analysis</b>
 </p>
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/Scree_plot.PNG">
 <br>
+
+By the elbow test, we first elected to reduce our data to six principal components. However, when we were not satisfied with our results, later on we also tried training our models on 17 principal components. 
 
 <p align="center">
  <b>3D Scatter Plot of ALL vs. Normal with Top 3 Principal Components</b>
@@ -114,25 +114,24 @@ By the elbow test, we elected to reduce our data to six principal components.
 # Classifications
 We applied 5 different classification models to the problem: Support Vector Machine (SVM), Random Forest (RF), K-Nearest Neighbor (KNN), Majority Voting (MV) and Stacking. The last two methods are enseble methods where we combined our SVM, RF and KNN models in hopes of further improving classification results.
 
-## Support Vector Machine
+### Support Vector Machine
 For our SVM kernel, we used a the radial basis function (RBF) because it performed better than a linear kernel. To optomomize the hyperparamaters C and gamma we employed grid search cross validation.
 
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/SVM_PCA6.PNG">
 
-## Random Forest
+### Random Forest
 To optomize the hyperparameters of our Random Forest classifier, we again applied grid search cross validation, but this time with many more hyperparameters: number of estimators, bootstrapping (yes or no), maximum depth of estimators, the maximum number of features considered for each split, minimum samples required to split a node, minimum samples required to have on a leaf node. However, this model performed perfectly on our training data, indicating that it may have over-fitted to our train data. Thus, we created a second random forest classifier with more conservative hyperparameter inputs, e.g. smaller number of estimators and smaller maximum depth. We call this second classigier RF2.  
 
-## K-Nearest Neighbor
+### K-Nearest Neighbor
 For our KNN classifier, we used cross validation to optomize the hyperparameter K. The K value with the highest mean accuracy was 30.
 
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/KNN_PCA6.PNG">
 
-## Ensemble Methods
+### Ensemble Methods
 We used two ensemble methods comprised of the SVM, RF and KNN methods that we had already tuned. First, we did a simple Majority vote classifier to see if this improved results. Second, we employed a Stacking method, wherein the SVM, RF and KNN classifiers served as base estimators, and we employed a Logistic Regression (LR) classifier as the meta classifier. 
 
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/Stacking.png">
 </p>
-
 
 # Comparrison of Methods
 
@@ -146,13 +145,20 @@ We used two ensemble methods comprised of the SVM, RF and KNN methods that we ha
 | Stack | 1131 | 232 | 416 | 88 |
 
 
-<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ROC_PCA6.PNG">
+<p float="left">
+  <img src="/https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ComparisonPCA6.PNG" width="600" />
+  <img src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ComparisonPCA17.PNG" width="600" /> 
+</p>
+<p float="left">
+  <img src="/https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ComparisonRF16.PNG" width="600" />
+  <img src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ComparisonFull.PNG" width="600" /> 
 </p>
 
- 
-<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ComparisonPCA6.PNG">
-</p>
 
+<p float="left">
+  <img src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ROC_PCA6.PNG" width="400" />
+  <img src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ROC_Full.PNG" width="400" /> 
+</p>
 
 
 # Conclusion
