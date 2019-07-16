@@ -38,33 +38,14 @@ Color is another important descriptor of ALL nucleus. ALL nucleus has the sparse
 
 
 In total, 9 Morphological, 21 texture, and 8 color features are extracted. After obtaining the numerical data, the features are scaled to lie in the interval [0,1] using min-max scaling.
-<center>
- 
-|**Morphologial**                |**Texture**                                      |**Color**                      |  
-|:------------------------------:|:-----------------------------------------------:|:-----------------------------:|
-|Cell Size                       |Haralick Angular Second Moment                   |Red Mean                       |
-|Perimeter                       |Haralick Contrast                                |Green Mean                     |
-|Form Factor                     |Haralick Correlation                             |Blue Mean                      |
-|Roundness                       |Haralick Variance                                |Hue Mean                       |
-|Length/Diameter Ratio           |Haralick Inverse Difference Moment               |Saturation Mean                |
-|Compactness                     |Haralick Sum Average                             |Value Mean                     |
-|Boundary Roughness Variance     |Haralick Sum Variance                            |Intensity Mean                 |
-|Boundary Roughness Skewness     |Haralick Sum Entropy                             |Intensity Variance             |
-|Boundary Roughness Kurtosis     |Haralick Entropy                                 |                               |
-|                                |Haralick Difference Variance                     |                               |
-|                                |Haralick Difference Entropy                      |                               |
-|                                |Haralick Information Measures of Correlation 1   |                               |
-|                                |Haralick Information Measures of Correlation 2   |                               |
-|                                |Haar Wavelet Approximation Mean                  |                               |
-|                                |Haar Wavelet Horizontal Mean                     |                               |
-|                                |Haar Wavelet Vertical Mean                       |                               |
-|                                |Haar Wavelet Diagonal Mean                       |                               |
-|                                |Haar Wavelet Approximation Variance              |                               |
-|                                |Haar Wavelet Horizontal Variance                 |                               |
-|                                |Haar Wavelet Vertical Variance                   |                               |
-|                                |Wavelet Diagonal Variance                        |                               |
 
-Table 1. **Features**
+<br>
+<img align="center" src="Figures/feature_chart.png">
+<br>
+
+<p align="center">
+<b> Table 1. Features </b>
+</p>
 
 
 # Dimension Reduction
@@ -72,20 +53,13 @@ We applied two differenet dimension reduction methods: Random Forest (RF) and Pr
 
 
 
-|Ranking|Feature   |
-|:-----:|:--------:|
-|1|Cell Size|
-|2|Perimeter|
-|3|Haralick Difference Entropy|
-|4|Haralick Contrast|
-|5|Red Mean|
-|6|Value Mean|
-|7|Haralick Information Measures of Correlation 1|
-|8|Haralick Information Measures of Correlation 2|
-|9|Hue Mean|
-|10|Saturation Mean|
+<br>
+<img align="center" src="Figures/top_feature_chart.png">
+<br>
 
-Table 2. **Top 10 features from random forest**
+<p align="center">
+<b> Table 2. Top 10 features from random forest </b>
+</p>
 
 
  <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/RF%20Feature%20Importance.PNG">
