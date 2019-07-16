@@ -102,7 +102,7 @@ As you can see, there is some slight separation of ALL and normal cells over the
 <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/Scree_plot.PNG">
 <br>
 
-By the elbow test, we first elected to reduce our data to six principal components. However, when we were not satisfied with our results, later on we also tried training our models on 17 principal components. 
+By the elbow test, we first elected to reduce our data to 6 principal components.
 
 <p align="center">
  <b>3D Scatter Plot of ALL vs. Normal with Top 3 Principal Components</b>
@@ -111,8 +111,8 @@ By the elbow test, we first elected to reduce our data to six principal componen
 <br>
 <br>
 
-# Classifications
-We applied 5 different classification models to the problem: Support Vector Machine (SVM), Random Forest (RF), K-Nearest Neighbor (KNN), Majority Voting (MV) and Stacking. The last two methods are enseble methods where we combined our SVM, RF and KNN models in hopes of further improving classification results.
+# Classification
+The following figures reflect the training procceses done on the first 6 principal components. We applied 5 different classification models to the problem: Support Vector Machine (SVM), Random Forest (RF), K-Nearest Neighbor (KNN), Majority Voting (MV) and Stacking. The last two methods are enseble methods where we combined our SVM, RF and KNN models in hopes of further improving classification results.
 
 ### Support Vector Machine
 For our SVM kernel, we used a the radial basis function (RBF) because it performed better than a linear kernel. To optomomize the hyperparamaters C and gamma we employed grid search cross validation.
@@ -125,24 +125,21 @@ To optomize the hyperparameters of our Random Forest classifier, we again applie
 ### K-Nearest Neighbor
 For our KNN classifier, we used cross validation to optomize the hyperparameter K. The K value with the highest mean accuracy was 30.
 
-<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/KNN_PCA6.PNG">
+<img align="center" src="Figures/KNN_PCA6.PNG">
 
 ### Ensemble Methods
 We used two ensemble methods comprised of the SVM, RF and KNN methods that we had already tuned. First, we did a simple Majority vote classifier to see if this improved results. Second, we employed a Stacking method, wherein the SVM, RF and KNN classifiers served as base estimators, and we employed a Logistic Regression (LR) classifier as the meta classifier. 
 
-<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/Stacking.png">
+<img align="center" src="Figures/Stacking.png">
 </p>
 
-# Comparrison of Methods
+# Results and Comparrison of Methods
+The results of our models when trained on 6 principal components are given below.
+<img align="center" src="Figures/ComparisonPCA6.PNG">
 
-|       | TP   | TN  | FP  | FN |
-|-------|------|-----|-----|----|
-| SVM   | 1140 | 234 | 414 | 79 |
-| RF    | 1132 | 231 | 417 | 87 |
-| RF2   | 1136 | 231 | 417 | 83 |
-| KNN   | 1141 | 167 | 481 | 78 |
-| MV    | 1142 | 215 | 433 | 77 |
-| Stack | 1131 | 232 | 416 | 88 |
+<img align="center" src="Figures/ROC_PCA6.PNG">
+
+Each model performs about the same with around 73% accuracy. KNN performed the worst with 70.1% accuracy and SVM performed the best with 73.6%, as well as the best ROC curve. After viewing these results, we wondered if we were eliminating too much information by reducing to only 6 components, so we ran trained the models on 17 components. The results were essentially the same. Indeed, we got similar results when training on only the 16 most important features, and on no dimensionality reduction at all.
 
 
 <p float="left">
@@ -163,7 +160,7 @@ We used two ensemble methods comprised of the SVM, RF and KNN methods that we ha
 
 # Conclusion
 
-This classification task was quite difficult, as the cancer cells and normal cells often appear quite similair, both as images and as extracted numerical features. All of our models, including the ensemble classifiers, performed similairly with accuracies arround 73%. KNN performed the worst with 70.1% accuracy and SVM performed the best with 73.6%. While these results are not as good as we hoped, they are a good start for this classification problem. Moreover, while the accuracy of our models relatively low, the percision is relatively high. This means that classication of cancer is often correct. Lastly, while our false positive rates are quite high, our false negative rates are low. For the problem of identifying cancer, it is far better to have this situation than the opposite because we would rather incorrectly frighten some patients that do not have cancer than erroneously tell sick people that they are healthy. 
+This classification task was quite difficult, as the cancer cells and normal cells often appear quite similair, both as images and as extracted numerical features. All of our models, including the ensemble classifiers, performed similairly with accuracies arround 73% over differnt feature spaces. The best overall model is the Random Forest trained on data before any dimensionality reduction processes. While our models are not as accurate as we hoped, they are a good start for this classification problem, proving more accurate than a random guess. Moreover, while the accuracy of our models is relatively low, the percision is high. This means that a cell that is classified as cancerous has a high likelihood of being correctly identified. Lastly, while our false positive rates are quite high, our false negative rates are low. For the problem of identifying cancer, it is far better to have this situation than the opposite; we would rather incorrectly frighten some patients that do not have cancer with an incorrect diagnosis than erroneously tell patients who have ALL that they are cancer-free. 
 
 # References
  
