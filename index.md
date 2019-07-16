@@ -146,12 +146,12 @@ We used two ensemble methods comprised of the SVM, RF and KNN methods that we ha
 
 
 <p float="left">
-  <img src="/https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ComparisonPCA6.PNG" width="600" />
-  <img src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ComparisonPCA17.PNG" width="600" /> 
+  <img src="Figures/ComparisonPCA6.PNG" width="600" />
+  <img src="Figures/ComparisonPCA17.PNG" width="600" /> 
 </p>
 <p float="left">
-  <img src="/https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ComparisonRF16.PNG" width="600" />
-  <img src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ComparisonFull.PNG" width="600" /> 
+  <img src="Figures/ComparisonRF16.PNG" width="600" />
+  <img src="Figures/ComparisonFull.PNG" width="600" /> 
 </p>
 
 
