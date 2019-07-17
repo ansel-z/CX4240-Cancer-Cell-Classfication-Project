@@ -135,6 +135,8 @@ Below are the results of the majority vote and stacking ensemble methods on the 
 
 <img align="center" src="Figures/ROC_PCA6_wide.PNG">
 
+<img align="center" src="Figures/auc_PC6.png">
+
 Each model performs about the same with around 73% accuracy. KNN performed the worst with 70.1% accuracy and SVM performed the best with 73.6%, as well as the best ROC curve. After viewing these results, we wondered if we were eliminating too much information by reducing to only 6 components, so we ran trained the models on 17 components. The results were essentially the same. Indeed, we got similar results when training on only the 16 most important features, and on no dimensionality reduction at all.
 
 
