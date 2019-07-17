@@ -97,7 +97,7 @@ The following figures reflect the training procceses done on the first 6 princip
 ### Support Vector Machine
 For our SVM kernel, we used a the radial basis function (RBF) because it performed better than a linear kernel. To optomomize the hyperparamaters C and gamma we employed grid search cross validation.
 
-<img align="center" src="Figures/SVM_PCA6.PNG">
+<img align="center" src="Figures/SVM_PCA6_wide.PNG">
 
 ### Random Forest
 To optomize the hyperparameters of our Random Forest classifier, we again applied grid search cross validation, but this time with many more hyperparameters: number of estimators, bootstrapping (yes or no), maximum depth of estimators, the maximum number of features considered for each split, minimum samples required to split a node, minimum samples required to have on a leaf node. However, this model performed perfectly on our training data, indicating that it may have over-fitted to our train data. Thus, we created a second random forest classifier with more conservative hyperparameter inputs, e.g. smaller number of estimators and smaller maximum depth. We call this second classigier RF2.  
@@ -105,7 +105,7 @@ To optomize the hyperparameters of our Random Forest classifier, we again applie
 ### K-Nearest Neighbor
 For our KNN classifier, we used cross validation to optomize the hyperparameter K. The K value with the highest mean accuracy was 30.
 
-<img align="center" src="Figures/KNN_PCA6.PNG">
+<img align="center" src="Figures/KNN_PCA6_wide.PNG">
 
 ### Ensemble Methods
 We used two ensemble methods comprised of the SVM, RF and KNN methods that we had already tuned. First, we did a simple majority vote classifier to see if this improved results. Second, we employed a stacking method, wherein the SVM, RF and KNN classifiers served as base estimators, and we employed a Logistic Regression (LR) classifier as the meta classifier. 
@@ -116,7 +116,7 @@ We used two ensemble methods comprised of the SVM, RF and KNN methods that we ha
 # Results and Comparison of Methods
 <img align="center" src="Figures/ComparisonPCA6.PNG">
 
-<img align="center" src="Figures/ROC_PCA6.PNG">
+<img align="center" src="Figures/ROC_PCA6_wide.PNG">
 
 Each model performs about the same with around 73% accuracy. KNN performed the worst with 70.1% accuracy and SVM performed the best with 73.6%, as well as the best ROC curve. After viewing these results, we wondered if we were eliminating too much information by reducing to only 6 components, so we ran trained the models on 17 components. The results were essentially the same. Indeed, we got similar results when training on only the 16 most important features, and on no dimensionality reduction at all.
 
