@@ -4,7 +4,7 @@
 
           
 # Introduction
-Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow produces too many immature lymphocytes. ALL is the most common cancer found in children, accounting for 30% of all pediatric cancer. While ALL has one of the highest cure rates in all of childhood cancers (88.5%), it progresses rapidly, so quick diagnosis is critical for timely treatment. Among various diagnosis methods for ALL, the microscopic analysis of blood cells is the most economical and has the advantage of being relatively non-invasive. However, microscopic analysis is time consuming and requires the supervision of a medical expert. Moreover, the results of such analysis are limited by their subjective nature and reliance on the expert’s skill. Over the last decade, various machine learning methods have been implemented for the diagnosis of ALL to overcome these shortcomings. 
+Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow produces too many immature lymphocytes. ALL is the most common cancer found in children, accounting for 30% of all pediatric cancer [1]. While ALL has one of the highest cure rates in all of childhood cancers (88.5%), it progresses rapidly, so quick diagnosis is critical for timely treatment. Among various diagnosis methods for ALL, the microscopic analysis of blood cells is the most economical and has the advantage of being relatively non-invasive. However, microscopic analysis is time consuming and requires the supervision of a medical expert. Moreover, the results of such analysis are limited by their subjective nature and reliance on the expert’s skill. Over the last decade, various machine learning methods have been implemented for the diagnosis of ALL to overcome these shortcomings. 
 
 <img align="center" src="Figures/Intro_ALL.jpg">
 
@@ -27,7 +27,7 @@ Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow pro
 <br>
 
 # Feature Extractions
-Visually, experience hematologists distinguish ALL from normal cells by comparing the morphological, chromatin pattern, and color characteristics or cells. In this project, quantitative morphological, texture, and color features are extracted from both ALL and normal cells in RGB, grayscale, and binary images (Table 1). 
+Visually, experience hematologists distinguish ALL from normal cells by comparing the morphological, chromatin pattern, and color characteristics or cells [2]. In this project, quantitative morphological, texture, and color features are extracted from both ALL and normal cells in RGB, grayscale, and binary images (Table 1). 
 
 <br>
 <img align="center" src="Figures/ALLvsHem.PNG">
@@ -36,7 +36,7 @@ Visually, experience hematologists distinguish ALL from normal cells by comparin
 Morphologically, ALL nucleus is characterized by large, irregular size and shape and its rough boundary. The size of nucleus is computed by counting the total number of pixels inf the nucleus in the binary images. The perimeter of the nucleus is calculated by counting the number of pixels representing the nucleus boundary. Form factor, roundness, length/diameter ratio, and compactness represent the shape of nucleus. Nucleus boundary roughness is measured by finding the variance, skewness, and kurtosis of all the distance between centroid and nucleus boundary points.
 
 
-The chromatin distribution reflects the organization of RNA and DNA in nucleus, and it is an essential feature for recognizing ALL. The chromatin distribution is extracted as texture features using Haralick’s textural feature extraction method [1] and Haar wavelet. Haralick’s method uses the gray-level co-occurrence matrix (GLCM) to find statistical data which summarize the relative frequency distribution in s grayscale image. Haar wavelet texture features are obtained by applying a high pass and a low pass filter to the grayscale images and taking means and variance in the horizontal, vertical, and diagonal directions.
+The chromatin distribution reflects the organization of RNA and DNA in nucleus, and it is an essential feature for recognizing ALL. The chromatin distribution is extracted as texture features using Haralick’s textural feature extraction method [3] and Haar wavelet. Haralick’s method uses the gray-level co-occurrence matrix (GLCM) to find statistical data which summarize the relative frequency distribution in s grayscale image. Haar wavelet texture features are obtained by applying a high pass and a low pass filter to the grayscale images and taking means and variance in the horizontal, vertical, and diagonal directions.
 
 
 Color is another important descriptor of ALL nucleus. ALL nucleus has the sparse red-purple color whereas normal hemoglobin nucleus has the color of blue-purple. The means of red, green, and blue color are computed from the RGB images, and the means of hue, saturation, and value are also extracted from the HSV images. In addition to the colors, the intensity mean and variance are computed from the grayscale images.
@@ -163,17 +163,21 @@ This classification task was quite difficult, as the cancer cells and normal cel
 
 # References
  
-[1]	R. M. Haralick, K. Shanmugam, and I. Dinstein, "Textural Features for Image Classification," IEEE Transactions on Systems, Man, and Cybernetics, vol. SMC-3, pp. 610-621, Nov. 1973.
+[1]	Howlader N, Noone AM, Krapcho M, Miller D, Brest A, Yu M, Ruhl J, Tatalovich Z, Mariotto A, Lewis DR, Chen HS, Feuer EJ, Cronin KA (eds). SEER Cancer Statistics Review, 1975-2016, National Cancer Institute. Bethesda, MD, https://seer.cancer.gov/csr/1975_2016/, based on November 2018 SEER data submission, posted to the SEER web site, April 2019.
 <br>
-[2]	E. A. Mohammed, M. M. A. Mohamed, C. Naugler, and B. H. Far, "Toward leveraging big value from data: chronic lymphocytic leukemia cell classification," Network Modeling Analysis in Health Informatics and Bioinformatics, vol. 6, p. 6 (17 pp.), Feb. 18, 2017.
+[2] S. Mohapatra, D. Patra, and S. Satpathy, "An ensemble classifier system for early diagnosis of acute lymphoblastic leukemia in blood microscopic images," Neural Comp. & Applic., vol. 24, pp. 1887-1904, Jun. 1, 2014.
 <br>
-[3]	S. Mohapatra, D. Patra, and S. Satpathy, "An ensemble classifier system for early diagnosis of acute lymphoblastic leukemia in blood microscopic images," Neural Comp. & Applic., vol. 24, pp. 1887-1904, Jun. 1, 2014.
+[3] R. M. Haralick, K. Shanmugam, and I. Dinstein, "Textural Features for Image Classification," IEEE Transactions on Systems, Man, and Cybernetics, vol. SMC-3, pp. 610-621, Nov. 1973.
 <br>
-[4]	L. Putzu, G. Caocci, and C. Di Ruberto, "Leucocyte classification for leukaemia detection using image processing techniques," Artif. Intell. Med., vol. 62, pp. 179-191, Nov. 2014.
+[4]	E. A. Mohammed, M. M. A. Mohamed, C. Naugler, and B. H. Far, "Toward leveraging big value from data: chronic lymphocytic leukemia cell classification," Network Modeling Analysis in Health Informatics and Bioinformatics, vol. 6, p. 6 (17 pp.), Feb. 18, 2017.
 <br>
-[5]	I. Vincent, K. Kwon, S. Lee, and K. Moon, "Acute lymphoid leukemia classification using two-step neural network classifier," in 21st Korea-Japan Joint Workshop on Frontiers of Computer Vision (FCV), 2015, pp. 1-4.
+[5]	L. Putzu, G. Caocci, and C. Di Ruberto, "Leucocyte classification for leukaemia detection using image processing techniques," Artif. Intell. Med., vol. 62, pp. 179-191, Nov. 2014.
 <br>
-[6]	L. H. S. Vogado, R. M. S. Veras, F. H. D. Araujo, R. R. V. Silva, and K. R. T. Aires, "Leukemia diagnosis in blood slides using transfer learning in CNNs and SVM for classification," Eng. Appl. Artif. Intell., vol. 72, pp. 415-422, Jun. 2018.
+[6]	I. Vincent, K. Kwon, S. Lee, and K. Moon, "Acute lymphoid leukemia classification using two-step neural network classifier," in 21st Korea-Japan Joint Workshop on Frontiers of Computer Vision (FCV), 2015, pp. 1-4.
 <br>
-[7] Howlader N, Noone AM, Krapcho M, Miller D, Brest A, Yu M, Ruhl J, Tatalovich Z, Mariotto A, Lewis DR, Chen HS, Feuer EJ, Cronin KA (eds). SEER Cancer Statistics Review, 1975-2016, National Cancer Institute. Bethesda, MD, https://seer.cancer.gov/csr/1975_2016/, based on November 2018 SEER data submission, posted to the SEER web site, April 2019.
+[7]	L. H. S. Vogado, R. M. S. Veras, F. H. D. Araujo, R. R. V. Silva, and K. R. T. Aires, "Leukemia diagnosis in blood slides using transfer learning in CNNs and SVM for classification," Eng. Appl. Artif. Intell., vol. 72, pp. 415-422, Jun. 2018.
 <br>
+<br>
+
+Source of images: 
+[Intro Image](https://www.indushealthplus.ae/medical-tourism/health-tips/acute-lymphocytic-leukemia-all.html)
