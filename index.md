@@ -18,14 +18,14 @@ Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow pro
   [CodaLab](https://competitions.codalab.org/competitions/20429)
 
 ## Images of ALL and normal cells
-<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsHem_color.PNG">
+<img align="center" src="Figures/ALLvsHem_color.PNG">
 <br>
 
 # Feature Extractions
 Visually, experience hematologists distinguish ALL from normal cells by comparing the morphological, chromatin pattern, and color characteristics or cells. In this project, quantitative morphological, texture, and color features are extracted from both ALL and normal cells in RGB, grayscale, and binary images (Table 1). 
 
 <br>
-<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsHem.PNG">
+<img align="center" src="Figures/ALLvsHem.PNG">
 <br>
 
 Morphologically, ALL nucleus is characterized by large, irregular size and shape and its rough boundary. The size of nucleus is computed by counting the total number of pixels inf the nucleus in the binary images. The perimeter of the nucleus is calculated by counting the number of pixels representing the nucleus boundary. Form factor, roundness, length/diameter ratio, and compactness represent the shape of nucleus. Nucleus boundary roughness is measured by finding the variance, skewness, and kurtosis of all the distance between centroid and nucleus boundary points.
@@ -38,68 +38,38 @@ Color is another important descriptor of ALL nucleus. ALL nucleus has the sparse
 
 
 In total, 9 Morphological, 21 texture, and 8 color features are extracted. After obtaining the numerical data, the features are scaled to lie in the interval [0,1] using min-max scaling.
-<center>
- 
-|**Morphologial**                |**Texture**                                      |**Color**                      |  
-|:------------------------------:|:-----------------------------------------------:|:-----------------------------:|
-|Cell Size                       |Haralick Angular Second Moment                   |Red Mean                       |
-|Perimeter                       |Haralick Contrast                                |Green Mean                     |
-|Form Factor                     |Haralick Correlation                             |Blue Mean                      |
-|Roundness                       |Haralick Variance                                |Hue Mean                       |
-|Length/Diameter Ratio           |Haralick Inverse Difference Moment               |Saturation Mean                |
-|Compactness                     |Haralick Sum Average                             |Value Mean                     |
-|Boundary Roughness Variance     |Haralick Sum Variance                            |Intensity Mean                 |
-|Boundary Roughness Skewness     |Haralick Sum Entropy                             |Intensity Variance             |
-|Boundary Roughness Kurtosis     |Haralick Entropy                                 |                               |
-|                                |Haralick Difference Variance                     |                               |
-|                                |Haralick Difference Entropy                      |                               |
-|                                |Haralick Information Measures of Correlation 1   |                               |
-|                                |Haralick Information Measures of Correlation 2   |                               |
-|                                |Haar Wavelet Approximation Mean                  |                               |
-|                                |Haar Wavelet Horizontal Mean                     |                               |
-|                                |Haar Wavelet Vertical Mean                       |                               |
-|                                |Haar Wavelet Diagonal Mean                       |                               |
-|                                |Haar Wavelet Approximation Variance              |                               |
-|                                |Haar Wavelet Horizontal Variance                 |                               |
-|                                |Haar Wavelet Vertical Variance                   |                               |
-|                                |Wavelet Diagonal Variance                        |                               |
 
-Table 1. **Features**
+<p align="center">
+<b> Table 1. Features </b>
+</p>
 
+<br>
+<img align="center" src="Figures/feature_chart.png">
+<br>
 
 # Dimension Reduction
 We applied two differenet dimension reduction methods: Random Forest (RF) and Principal Component Analysis (PCA).
 
+<p align="center">
+<b> Table 2. Top 10 features from random forest </b>
+</p>
 
+<br>
+<img align="center" src="Figures/top_feature_chart.png">
+<br>
 
-|Ranking|Feature   |
-|:-----:|:--------:|
-|1|Cell Size|
-|2|Perimeter|
-|3|Haralick Difference Entropy|
-|4|Haralick Contrast|
-|5|Red Mean|
-|6|Value Mean|
-|7|Haralick Information Measures of Correlation 1|
-|8|Haralick Information Measures of Correlation 2|
-|9|Hue Mean|
-|10|Saturation Mean|
-
-Table 2. **Top 10 features from random forest**
-
-
- <img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/RF%20Feature%20Importance.PNG">
+ <img align="center" src="Figures/RF%20Feature%20Importance.PNG">
 
 <br>
 <br>
 <p align="center">
   <b>Pairplot of Top 5 Features</b>
-<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/Pairplot.PNG">
+<img align="center" src="Figures/Pairplot.PNG">
 </p>
 
 <p align="center">
  <b>3D Scatter Plot of ALL vs. Normal with Top 3 Features</b>
-<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALLvsNormal_SCatter3D_RF.gif">
+<img align="center" src="Figures/ALLvsNormal_SCatter3D_RF.gif">
 </p>
 <br>
 <br>
@@ -109,14 +79,14 @@ As you can see, there is some slight separation of ALL and normal cells over the
 <p align="center">
 <b>Principal Component Analysis</b>
 </p>
-<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/Scree_plot.PNG">
+<img align="center" src="Figures/Scree_plot.PNG">
 <br>
 
 By the elbow test, we first elected to reduce our data to 6 principal components.
 
 <p align="center">
  <b>3D Scatter Plot of ALL vs. Normal with Top 3 Principal Components</b>
-<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/ALL_Normal_Scatter3D_PCA.gif">
+<img align="center" src="Figures/ALL_Normal_Scatter3D_PCA.gif">
 </p>
 <br>
 <br>
@@ -127,7 +97,7 @@ The following figures reflect the training procceses done on the first 6 princip
 ### Support Vector Machine
 For our SVM kernel, we used a the radial basis function (RBF) because it performed better than a linear kernel. To optomomize the hyperparamaters C and gamma we employed grid search cross validation.
 
-<img align="center" src="https://github.com/ansel-z/CX4240-Cancer-Cell-Classfication-Project/blob/master/Figures/SVM_PCA6.PNG">
+<img align="center" src="Figures/SVM_PCA6.PNG">
 
 ### Random Forest
 To optomize the hyperparameters of our Random Forest classifier, we again applied grid search cross validation, but this time with many more hyperparameters: number of estimators, bootstrapping (yes or no), maximum depth of estimators, the maximum number of features considered for each split, minimum samples required to split a node, minimum samples required to have on a leaf node. However, this model performed perfectly on our training data, indicating that it may have over-fitted to our train data. Thus, we created a second random forest classifier with more conservative hyperparameter inputs, e.g. smaller number of estimators and smaller maximum depth. We call this second classigier RF2.  
