@@ -97,7 +97,7 @@ The following figures reflect the training procceses done on the first 6 princip
 ### Support Vector Machine
 For our SVM kernel, we used a the radial basis function (RBF) because it performed better than a linear kernel. To optomomize the hyperparamaters C and gamma we employed grid search 5-fold cross validation. We found that the optimal values for C and gamma were 10 and 3 respectively, which had an average accuracy of 84.7%.
 
-<img align="center" src="Figures/SVM_PCA6.png">
+<img align="center" src="Figures/SVM_PCA6_wide.PNG">
 
 When we predicted on the test data with the tuned SVM, we got the following results.
 
@@ -114,7 +114,7 @@ To optomize the hyperparameters of our Random Forest classifier, we again applie
 ### K-Nearest Neighbor
 For our KNN classifier, we used cross validation to optomize the hyperparameter K. The K value with the highest mean accuracy was 30.
 
-<img align="center" src="Figures/KNN_PCA6.PNG">
+<img align="center" src="Figures/KNN_PCA6_wide.PNG">
 
 <img align="center" src="Figures/knn_conf_PC6.png">
 
