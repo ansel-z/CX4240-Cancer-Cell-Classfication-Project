@@ -116,7 +116,7 @@ For our KNN classifier, we used cross validation to optomize the hyperparameter 
 
 <img align="center" src="Figures/KNN_PCA6_wide.PNG">
 
-<img align="center" src="Figures/knn_conf_PC6.png">
+<img align="center" src="Figures/kkn_conf_PC6.png">
 
 ### Ensemble Methods
 We used two ensemble methods comprised of the SVM, RF and KNN methods that we had already tuned. First, we did a simple majority vote classifier to see if this improved results. Second, we employed a stacking method, wherein the SVM, RF and KNN classifiers served as base estimators, and we employed a Logistic Regression (LR) classifier as the meta classifier. We tuned the LR hyperparameters (C and penalty) using grid search 5-fold cross validation.
