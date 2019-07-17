@@ -6,6 +6,8 @@
 # Introduction
 Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow produces too many immature lymphocytes. ALL is the most common cancer found in children, accounting for 30% of all pediatric cancer. While ALL has one of the highest cure rates in all of childhood cancers (88.5%), it progresses rapidly, so quick diagnosis is critical for timely treatment. Among various diagnosis methods for ALL, the microscopic analysis of blood cells is the most economical and has the advantage of being relatively non-invasive. However, microscopic analysis is time consuming and requires the supervision of a medical expert. Moreover, the results of such analysis are limited by their subjective nature and reliance on the expert’s skill. Over the last decade, various machine learning methods have been implemented for the diagnosis of ALL to overcome these shortcomings. 
 
+<img align="center" src="Figures/Intro_ALL.jpg">
+
 # Overview
 
 <img align="center" src="Figures/BlockDiagram.PNG">
@@ -44,10 +46,8 @@ In total, 9 Morphological, 21 texture, and 8 color features are extracted. After
 
 <p align="center">
 <b> Table 1. Features </b>
-</p>
-
-<br>
 <img align="center" src="Figures/feature_chart.png">
+</p>
 <br>
 
 # Dimension Reduction
@@ -55,10 +55,8 @@ We applied two differenet dimension reduction methods: Random Forest (RF) and Pr
 
 <p align="center">
 <b> Table 2. Top 10 features from random forest </b>
-</p>
-
-<br>
 <img align="center" src="Figures/top_feature_chart.png">
+</p>
 <br>
 
  <img align="center" src="Figures/RF%20Feature%20Importance.PNG">
