@@ -95,28 +95,45 @@ By the elbow test, we first elected to reduce our data to 6 principal components
 The following figures reflect the training procceses done on the first 6 principal components. We applied 5 different classification models to the problem: Support Vector Machine (SVM), Random Forest (RF), K-Nearest Neighbor (KNN), Majority Voting (MV) and Stacking. The last two methods are enseble methods where we combined our SVM, RF and KNN models in hopes of further improving classification results.
 
 ### Support Vector Machine
-For our SVM kernel, we used a the radial basis function (RBF) because it performed better than a linear kernel. To optomomize the hyperparamaters C and gamma we employed grid search cross validation.
+For our SVM kernel, we used a the radial basis function (RBF) because it performed better than a linear kernel. To optomomize the hyperparamaters C and gamma we employed grid search 5-fold cross validation. We found that the optimal values for C and gamma were 10 and 3 respectively, which had an average accuracy of 84.7%.
 
-<img align="center" src="Figures/SVM_PCA6_wide.PNG">
+<img align="center" src="Figures/SVM_PCA6.png">
+
+When we predicted on the test data with the tuned SVM, we got the following results.
+
+<img align="center" src="Figures/svm_conf_PC6.png">
 
 ### Random Forest
-To optomize the hyperparameters of our Random Forest classifier, we again applied grid search cross validation, but this time with many more hyperparameters: number of estimators, bootstrapping (yes or no), maximum depth of estimators, the maximum number of features considered for each split, minimum samples required to split a node, minimum samples required to have on a leaf node. However, this model performed perfectly on our training data, indicating that it may have over-fitted to our train data. Thus, we created a second random forest classifier with more conservative hyperparameter inputs, e.g. smaller number of estimators and smaller maximum depth. We call this second classigier RF2.  
+To optomize the hyperparameters of our Random Forest classifier, we again applied grid search 3-fold cross validation, but this time with many more hyperparameters: number of estimators, bootstrapping (yes or no), maximum depth of estimators, the maximum number of features considered for each split, minimum samples required to split a node, minimum samples required to have on a leaf node. However, this model performed perfectly on our training data, indicating that it may have over-fitted to our train data. Thus, we created a second random forest classifier with more conservative hyperparameter inputs, e.g. smaller number of estimators and smaller maximum depth. We call this second classigier RF2. Below we see the test results of RF and RF2 on the left and right respectively. 
+
+<p float="left">
+  <img src="Figures/rf_conf_PC6.png" width="400" />
+  <img src="Figures/rf2_conf_PC6.png" width="400" /> 
+</p>
 
 ### K-Nearest Neighbor
 For our KNN classifier, we used cross validation to optomize the hyperparameter K. The K value with the highest mean accuracy was 30.
 
-<img align="center" src="Figures/KNN_PCA6_wide.PNG">
+<img align="center" src="Figures/KNN_PCA6.PNG">
+
+<img align="center" src="Figures/knn_conf_PC6.png">
 
 ### Ensemble Methods
-We used two ensemble methods comprised of the SVM, RF and KNN methods that we had already tuned. First, we did a simple majority vote classifier to see if this improved results. Second, we employed a stacking method, wherein the SVM, RF and KNN classifiers served as base estimators, and we employed a Logistic Regression (LR) classifier as the meta classifier. 
+We used two ensemble methods comprised of the SVM, RF and KNN methods that we had already tuned. First, we did a simple majority vote classifier to see if this improved results. Second, we employed a stacking method, wherein the SVM, RF and KNN classifiers served as base estimators, and we employed a Logistic Regression (LR) classifier as the meta classifier. We tuned the LR hyperparameters (C and penalty) using grid search 5-fold cross validation.
 
 <img align="center" src="Figures/Stacking.png">
 
+Below are the results of the majority vote and stacking ensemble methods on the left and right respectively. 
+
+<p float="left">
+  <img src="Figures/mv_conf_PC6.png" width="400" />
+  <img src="Figures/stack_conf_PC6.png" width="400" /> 
+</p>
 
 # Results and Comparison of Methods
 <img align="center" src="Figures/ComparisonPCA6.PNG">
 
-<img align="center" src="Figures/ROC_PCA6_wide.PNG">
+<img align="center" src="Figures/ROC_PCA6.PNG">
 
 Each model performs about the same with around 73% accuracy. KNN performed the worst with 70.1% accuracy and SVM performed the best with 73.6%, as well as the best ROC curve. After viewing these results, we wondered if we were eliminating too much information by reducing to only 6 components, so we ran trained the models on 17 components. The results were essentially the same. Indeed, we got similar results when training on only the 16 most important features, and on no dimensionality reduction at all.
 
