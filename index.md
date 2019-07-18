@@ -27,7 +27,7 @@ Acute lymphoblastic leukemia (ALL) is a type of cancer where the bone marrow pro
 <br>
 
 # Feature Extractions
-Visually, experience hematologists distinguish ALL from normal cells by comparing the morphological, chromatin pattern, and color characteristics or cells [2]. In this project, quantitative morphological, texture, and color features are extracted from both ALL and normal cells in RGB, grayscale, and binary images (Table 1). 
+Visually, experienced hematologists distinguish ALL from normal cells by comparing the morphological, chromatin pattern, and color characteristics or cells [2]. In this project, quantitative morphological, texture, and color features are extracted from both ALL and normal cells in RGB, grayscale, and binary images (Table 1). 
 
 <br>
 <img align="center" src="Figures/ALLvsHem.PNG">
