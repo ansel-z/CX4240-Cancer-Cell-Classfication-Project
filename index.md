@@ -150,15 +150,20 @@ In terms of accuracy, each model other than KNN performs about the same: around 
   <img src="Figures/ComparisonFull.PNG" width="400" /> 
 </p>
 
+<p align="center">
+<b> AUC Scores Over Different Feature Spaces </b>
+</p>
 <img align="center" src="Figures/auc_comparison_wide.png">
 
 
 # Conclusion
 
-This classification task was quite difficult, as many cancer cells and normal cells often appear very similair to each other not only as image but also as extracted numerical features. With the exception of KNN, which was the clear worst predicter, all of our classifiers performed similairly on the four feature spaces that we tried, with accuracies hovering a little above 73%. The best overall model for accuracy is the Random Forest trained on data before any dimensionality reduction process, which achiever 73.9%. While our models are not as accurate as we hoped, they are a good start for this classification problem, proving more accurate than a random guess. Moreover, while the accuracy of our models is relatively low, the recall is high, i.e. the false negtive rate is low. For the problem of identifying cancer, it is far better to have this situation than the opposite; we would rather incorrectly frighten some patients that do not have cancer with an incorrect diagnosis than erroneously tell patients who have ALL that they are cancer-free. 
+This classification task was quite difficult, as cancer cells and normal cells often appear very similair to each other not only as images but also as extracted numerical features. With the exception of KNN, which was the clear worst predicter, all of our classifiers performed similairly on the four feature spaces that we tried, with accuracies hovering a little above 73%. The best overall model is the Random Forest trained on data before any dimensionality reduction process, which achieved 73.9% accuracy and 0.752 AUC. While our models are not as accurate as we hoped, they are a good start for this classification problem, proving more accurate than a random guess. Moreover, while the accuracy of our models is relatively low, the recall is high, i.e. these classifiers correctly identify cancer most of the time. For the problem of diagnosing ALL, it is far better to have this situation than the opposite, where healthy people are almost always correctly identified but patients with cancer are not. 
 
+# Future Work
 
-
+- Convolutional Nueral Network
+_ Larger ensemble methods
 
 # References
  
