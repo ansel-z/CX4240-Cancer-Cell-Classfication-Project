@@ -138,7 +138,7 @@ Below are the results of the majority vote and stacking ensemble methods on the 
 
 <img align="center" src="Figures/auc_PC6.png">
 
-Each model performs about the same with around 73% accuracy. KNN performed the worst with 70.1% accuracy and SVM performed the best with 73.6%, as well as the best ROC curve. After viewing these results, we wondered if we were eliminating too much information by reducing to only 6 components, so we ran trained the models on 17 components. The results were essentially the same. Indeed, we got similar results when training on only the 16 most important features, and on no dimensionality reduction at all.
+In terms of accuracy, each model other than KNN performs about the same: around 73%. KNN performs the worst with 70.1% accuracy and SVM performs the best with 73.6%. We see a little more disparity between models when we consider AUC scores. By this metric, RF outscores the other classifiers with 0.719, and stacking performs a lot worse with a score of 0.643. Moreover, we see that our recall for each method is quite similair, between 93% and 94%. This indicates the percentage of cancer that is correctly identified. After viewing these results, we wondered if we were eliminating too much information by reducing to only 6 components, so we ran trained the models on 17 components, which recovered 99% of the variance. The results on this feature space were essentially the same. Indeed, we got similar results when training on only the 16 most important features as determined by random forest, as well as when we trained on the original 38 features with no dimensionality reduction at all.
 
 
 <p float="left">
@@ -150,16 +150,15 @@ Each model performs about the same with around 73% accuracy. KNN performed the w
   <img src="Figures/ComparisonFull.PNG" width="400" /> 
 </p>
 
-
-<p float="left">
-  <img src="Figures/ROC_PCA6.PNG" width="400" />
-  <img src="Figures/ROC_Full.PNG" width="410" /> 
-</p>
+<img align="center" src="Figures/auc_comparison_wide.png">
 
 
 # Conclusion
 
-This classification task was quite difficult, as the cancer cells and normal cells often appear quite similair, both as images and as extracted numerical features. All of our models, including the ensemble classifiers, performed similairly with accuracies arround 73% over different feature spaces. The best overall model is the Random Forest trained on data before any dimensionality reduction processes. While our models are not as accurate as we hoped, they are a good start for this classification problem, proving more accurate than a random guess. Moreover, while the accuracy of our models is relatively low, the percision is high. This means that a cell that is classified as cancerous has a high likelihood of being correctly identified. Lastly, while our false positive rates are quite high, our false negative rates are low. For the problem of identifying cancer, it is far better to have this situation than the opposite; we would rather incorrectly frighten some patients that do not have cancer with an incorrect diagnosis than erroneously tell patients who have ALL that they are cancer-free. 
+This classification task was quite difficult, as many cancer cells and normal cells often appear very similair to each other not only as image but also as extracted numerical features. With the exception of KNN, which was the clear worst predicter, all of our classifiers performed similairly on the four feature spaces that we tried, with accuracies hovering a little above 73%. The best overall model for accuracy is the Random Forest trained on data before any dimensionality reduction process, which achiever 73.9%. While our models are not as accurate as we hoped, they are a good start for this classification problem, proving more accurate than a random guess. Moreover, while the accuracy of our models is relatively low, the recall is high, i.e. the false negtive rate is low. For the problem of identifying cancer, it is far better to have this situation than the opposite; we would rather incorrectly frighten some patients that do not have cancer with an incorrect diagnosis than erroneously tell patients who have ALL that they are cancer-free. 
+
+
+
 
 # References
  
