@@ -113,7 +113,7 @@ To optomize the hyperparameters of our Random Forest classifier, we again applie
 </p>
 
 ### K-Nearest Neighbor
-For our KNN classifier, we used cross validation to optomize the hyperparameter K. The K value with the highest mean accuracy was 30.
+For our KNN classifier, we used cross validation to optimize the hyperparameter K. The K value with the highest mean accuracy was 30.
 
 <img align="center" src="Figures/KNN_PCA6_wide.PNG">
 
