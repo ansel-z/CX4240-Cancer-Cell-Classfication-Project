@@ -163,7 +163,7 @@ This classification task was quite difficult, as cancer cells and normal cells o
 # Future Work
 
 - Convolutional Nueral Network
-_ Larger ensemble methods
+- Larger ensemble methods
 
 # References
  
