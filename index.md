@@ -162,8 +162,9 @@ This classification task was quite difficult, as cancer cells and normal cells o
 
 # Future Work
 
-- Convolutional Nueral Network
-- Larger ensemble methods
+- More features such as fractal geometry,texture features from Fourier transform, and local binary patterns can be extracted. 
+- Larger ensemble methods can be used in classification.
+- Convolutional Nueral Network can be used directly with the cell images without feature extractions.
 
 # References
  
